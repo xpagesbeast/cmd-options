@@ -21,9 +21,35 @@
       <artifactId>jopt-simple</artifactId>
       <version>6.0-alpha-3</version>
     </dependency>
+    <!-- JUNIT -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.8.1</version>
+    </dependency>
   </dependencies>
+
   <build>
   <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.1</version>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.2.2</version>
+
+    </plugin>
+
+    <!-- Add dependencies to build needed at runtime JAR -->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-dependency-plugin</artifactId>
@@ -42,8 +68,9 @@
         </execution>
       </executions>
     </plugin>
+
+    <!-- Build an executable JAR -->
     <plugin>
-      <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-jar-plugin</artifactId>
       <version>3.1.0</version>

@@ -23,11 +23,11 @@ public class CmdLineRunner {
                 .withRequiredArg()
                 .required();
 
-        OptionSet options = parser.parse(args);
+            OptionSet options = parser.parse(args);
+
 
         if (options.has("help")) {
             printHelper(parser);
-            System.exit(0);
         }else{
             System.out.println("Looking for settings-"+options.valueOf("e")+".properties");
             System.out.println("Looking for configuration-"+options.valueOf("e")+".properties");
@@ -52,7 +52,7 @@ public class CmdLineRunner {
      */
     private static void printHelper(OptionParser parser) {
         try {
-            System.out.println("HELP Command Line Options");
+            System.out.println("HELP ALEKS Command Line Options");
             System.out.println("Usage: java -jar target/cmd-options-2.0-SNAPSHOT.jar -e UAT");
             System.out.println("");
             parser.printHelpOn(System.out);
